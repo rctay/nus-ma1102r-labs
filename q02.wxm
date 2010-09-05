@@ -1,0 +1,4 @@
+curry_k(k):=
+    buildq([k], (%e)^sin(t) - 2*cos(k*t) + sin((2*t-%pi)/24)^5)$
+draw2d(nticks=4000,polar(curry_k(3),t,-50,50));
+
