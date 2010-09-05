@@ -1,0 +1,2 @@
+load("solve_rec")$
+solve_rec(f[n]=1-abs(1-2*f[n-1]),f[n], f[0]=1);
