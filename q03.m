@@ -11,3 +11,6 @@ ev(g,x=3.415946);
 /* [wxMaxima: input   start ] */
 ev(g,x=2.322337);
 /* [wxMaxima: input   end   ] */
+/* [wxMaxima: input   start ] */
+ev(g,x=3.674011);
+/* [wxMaxima: input   end   ] */
