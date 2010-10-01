@@ -6,17 +6,12 @@ depends(y,x);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+x0: %pi/2;y0: %pi;
 f: x*sin(y)-y*cos(x)=2*x;
-
-
 f1: diff(f,x);
-
-
 f2: solve(f1,'diff(y,x));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-at(f2, [x=%pi/2, y=%pi]);
+m: at(f2, [x=x0, y=y0]);
+solve(y-y0=m*(x-x0), y);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
