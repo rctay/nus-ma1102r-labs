@@ -11,7 +11,7 @@ f: x*sin(y)-y*cos(x)=2*x;
 f1: diff(f,x);
 f2: solve(f1,'diff(y,x))[1];
 m: rhs(at(f2, [x=x0, y=y0]));
-solve(y-y0=m*(x-x0),y);
+float(solve(y-y0=m*(x-x0),y));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -20,7 +20,7 @@ f: 4*x^4 + 8*x^2*y^5 - 25*x^2*y + 4*y^4=0;
 f1: diff(f, x);
 f2: solve(f1, 'diff(y,x))[1];
 m: rhs(at(f2, [x=x0,y=y0]));
-solve(y-y0=m*(x-x0),y);
+float(solve(y-y0=m*(x-x0),y));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -29,7 +29,7 @@ f: x*log(y)+%e^-x - y*%e^y = 0;
 f1: diff(f, x);
 f2: solve(f1, 'diff(y,x))[1];
 m: rhs(at(f2, [x=x0,y=y0]));
-solve(y-y0=m*(x-x0),y);
+float(solve(y-y0=m*(x-x0),y));
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
