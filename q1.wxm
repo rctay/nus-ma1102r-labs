@@ -23,5 +23,14 @@ m: rhs(at(f2, [x=x0,y=y0]));
 solve(y-y0=m*(x-x0),y);
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: input   start ] */
+x0: -1; y0: 1;
+f: x*log(y)+%e^-x - y*%e^y = 0;
+f1: diff(f, x);
+f2: solve(f1, 'diff(y,x))[1];
+m: rhs(at(f2, [x=x0,y=y0]));
+solve(y-y0=m*(x-x0),y);
+/* [wxMaxima: input   end   ] */
+
 /* Maxima can't load/batch files which end with a comment! */
 "Created with wxMaxima"$
