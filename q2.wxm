@@ -6,6 +6,9 @@
 x_of(p):= p[1];
 y_of(p):= p[2];
 
+/* generate equation of line from two points */
+line_equation(p1,p2):=solve(y-y_of(p1)=(y_of(p2)-y_of(p1))/(x_of(p2)-x_of(p1))*(x-x_of(p1)),y)[1];
+
 /* distance between two points */
 distance(p1,p2):= sqrt((x_of(p2)-x_of(p1))^2+(y_of(p2)-y_of(p1))^2);
 
