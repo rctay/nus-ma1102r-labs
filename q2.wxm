@@ -39,7 +39,7 @@ altitude_point(p1,p2,p_alt):= (
     h: distance(p1,p_alt),
     a0: cos(angle)*h,
     a1: distance(p1,p2),
-    point_k(p1, p2, a0/a1)
+    point_k(p1, p2, a0/(a1-a0))
 );
 /* [wxMaxima: input   end   ] */
 
