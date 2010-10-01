@@ -47,9 +47,12 @@ orthocentre(p1,p2,p3):=(
     p3on12: altitude_point(p1,p2,p3),
     p1on23: altitude_point(p2,p3,p1),
     p2on13: altitude_point(p1,p3,p2),
-    solve([line_equation(p1, p1on23),
-           line_equation(p2, p2on13),
-           line_equation(p3, p3on12)], [x,y])
+
+    /* just to be sure, we solve using two combinations */
+    [solve([line_equation(p1, p1on23),
+            line_equation(p2, p2on13)], [x,y]),
+     solve([line_equation(p2, p2on13),
+            line_equation(p3, p3on12)], [x,y])]
 );
 /* [wxMaxima: input   end   ] */
 
