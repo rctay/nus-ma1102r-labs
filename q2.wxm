@@ -21,5 +21,14 @@ point_k(p1,p2,k):=
 bisect(p_orig,p1,p2):= point_k(p1,p2,calc_k(p_orig,p1,p2));
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: input   start ] */
+A: [1,5];
+B: [20,1];
+C: [10,8];
+D: bisect(A,B,C);
+E: bisect(B,A,C);
+F: bisect(C,A,B);
+/* [wxMaxima: input   end   ] */
+
 /* Maxima can't load/batch files which end with a comment! */
 "Created with wxMaxima"$
