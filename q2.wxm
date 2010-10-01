@@ -54,19 +54,32 @@ orthocentre(p1,p2,p3):=(
      solve([line_equation(p2, p2on13),
             line_equation(p3, p3on12)], [x,y])]
 );
+
+incentre(p1,p2,p3):=(
+    p1on23: bisect(p1,p2,p3),
+    p2on13: bisect(p2,p1,p3),
+    p3on12: bisect(p3,p1,p2),
+
+    /* just to be sure, we solve using two combinations */
+    [solve([line_equation(p1, p1on23),
+            line_equation(p2, p2on13)], [x,y]),
+     solve([line_equation(p2, p2on13),
+            line_equation(p3, p3on12)], [x,y])]
+);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
 A: [1,5];
 B: [20,1];
 C: [10,8];
-D: bisect(A,B,C);
-E: bisect(B,A,C);
-F: bisect(C,A,B);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
 orthocentre(A,B,C);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+incentre(A,B,C);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
