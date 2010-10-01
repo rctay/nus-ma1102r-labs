@@ -1,0 +1,25 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.6 ] */
+
+/* [wxMaxima: input   start ] */
+/* selectors */
+x_of(p):= p[1];
+y_of(p):= p[2];
+
+/* distance between two points */
+distance(p1,p2):= sqrt((x_of(p2)-x_of(p1))^2+(y_of(p2)-y_of(p1))^2);
+
+/* get the ratio k */
+calc_k(p_orig,p1,p2):= distance(p_orig,p1)/distance(p_orig,p2);
+
+/* generate the point (x_k, y_k) */
+point_k(p1,p2,k):=
+  [x_of(p1)/(k+1)+k*x_of(p2)/(k+1),
+   y_of(p1)/(k+1)+k*y_of(p2)/(k+1)];
+
+/* finally...*/
+bisect(p_orig,p1,p2):= point_k(p1,p2,calc_k(p_orig,p1,p2));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
