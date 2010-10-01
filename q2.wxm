@@ -27,7 +27,11 @@ point_k(p1,p2,k):=
 bisect(p_orig,p1,p2):= point_k(p1,p2,calc_k(p_orig,p1,p2));
 
 /* cosine rule - assumed to be acute */
-angle_between(p_orig,p1,p2):=acos((distance(p_orig,p1)^2+distance(p_orig,p2)^2-distance(p1,p2)^2)/(2*a*b));
+angle_between(p_orig,p1,p2):=(
+    a: distance(p_orig,p1),
+    b: distance(p_orig,p2),
+    acos((a^2 + b^2 - distance(p1,p2)^2)/(2*a*b))
+);
 
 /* point created by "projecting" p_alt on to the line between p1 and p2 */
 altitude_point(p1,p2,p_alt):= point_k(p1,p2,cos(angle_between(p_1,p_alt,p2))*distance(p1,p_alt)/distance(p1,p2));
