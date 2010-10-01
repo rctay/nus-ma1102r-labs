@@ -34,7 +34,7 @@ angle_between(p_orig,p1,p2):=(
 );
 
 /* point created by "projecting" p_alt on to the line between p1 and p2 */
-altitude_point(p1,p2,p_alt):= point_k(p1,p2,cos(angle_between(p_1,p_alt,p2))*distance(p1,p_alt)/distance(p1,p2));
+altitude_point(p1,p2,p_alt):= point_k(p1,p2,cos(angle_between(p1,p_alt,p2))*distance(p1,p_alt)/distance(p1,p2));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
