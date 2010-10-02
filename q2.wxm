@@ -85,10 +85,12 @@ C: [10,8];
 
 /* [wxMaxima: input   start ] */
 orthocentre(A,B,C);
+float(%);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
 incentre(A,B,C);
+float(%);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
