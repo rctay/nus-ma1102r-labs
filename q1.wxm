@@ -12,7 +12,7 @@ tangent_at(f,x0,y0):=(
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-tangent_at(x*sin(y)-y*cos(x)=2*x, %pi/2, %pi);
+tangent_at(x*sin(y)-y*cos(2*x)=2*x, %pi/2, %pi);
 float(expand(%));
 /* [wxMaxima: input   end   ] */
 
