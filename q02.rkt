@@ -58,9 +58,27 @@
           [eq2 (equation-of-line pB pBonAC)]
           [eq3 (equation-of-line pC pConAB)])
       (list
-       (solve eq1 eq2)
-       (solve eq1 eq3)
-       (solve eq2 eq3)))))
+       eq1
+       eq2
+       eq3))))
+
+(define (round-places num places)
+  (define exp (expt 10 places))
+  (/ (round (* num exp))
+     exp))
+
+(define PLACES 5)
+
+(define (test-equations eqns x0 y0)
+  (map (lambda (eq)
+         (printf "got line ~a\n" (eq 'display))
+         (printf "testing x=~a, y=~a...~a\n"
+                 x0 y0
+                 (if (equal? (round-places y0 PLACES)
+                             (round-places (eq x0) PLACES))
+                     "pass"
+                     "FAIL")))
+       eqns))
 
 (define pA (make-point 'A 1 5))
 (define pB (make-point 'B 20 1))
@@ -71,4 +89,7 @@
 (angle-between (make-point 'C 0 0)
                (make-point 'A 4 3)
                (make-point 'B 0 3))
-(orthocenter pA pB pC)
+
+(test-equations (orthocenter pA pB pC)
+                12.96774193548387
+                22.09677419354839)
