@@ -84,12 +84,6 @@
 (define pB (make-point 'B 20 1))
 (define pC (make-point 'C 10 8))
 
-(equation-of-line pA pB)
-(k-of-line pA pB 1)
-(angle-between (make-point 'C 0 0)
-               (make-point 'A 4 3)
-               (make-point 'B 0 3))
-
 (test-equations (orthocenter pA pB pC)
                 12.96774193548387
                 22.09677419354839)
