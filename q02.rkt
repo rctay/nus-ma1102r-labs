@@ -62,6 +62,23 @@
        eq2
        eq3))))
 
+(define (bisect-on pivot p1 p2)
+  (let ([k (/ (distance pivot p1)
+              (distance pivot p2))])
+    (k-of-line p1 p2 k)))
+
+(define (incenter pA pB pC)
+  (let ([pAonBC (bisect-on pA pB pC)]
+        [pBonAC (bisect-on pB pA pC)]
+        [pConAB (bisect-on pC pA pB)])
+    (let ([eq1 (equation-of-line pA pAonBC)]
+          [eq2 (equation-of-line pB pBonAC)]
+          [eq3 (equation-of-line pC pConAB)])
+      (list
+       eq1
+       eq2
+       eq3))))
+
 (define (round-places num places)
   (define exp (expt 10 places))
   (/ (round (* num exp))
@@ -87,3 +104,7 @@
 (test-equations (orthocenter pA pB pC)
                 12.96774193548387
                 22.09677419354839)
+
+(test-equations (incenter pA pB pC)
+                9.635351111789738
+                5.493850465029502)
