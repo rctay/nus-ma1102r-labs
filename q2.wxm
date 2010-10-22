@@ -3,6 +3,13 @@
 
 /* [wxMaxima: input   start ] */
 S(n):=45*sum((csc(k*%pi/(2*n+1)))^4,k,1,n);
+Sp(n):=a*n^4+b*n^3+c*n^2+d*n+e;
+f(n):=S(n)=Sp(n);
+solve([f(0),f(1),f(2),f(3),f(4)],[a,b,c,d,e]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+float(%);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
