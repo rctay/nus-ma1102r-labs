@@ -2,12 +2,21 @@
 /* [ Created with wxMaxima version 0.8.6 ] */
 
 /* [wxMaxima: input   start ] */
-/* fails */
-defint(cos(x)/x,x,1,inf);
+/* this actually the cosine integral */
+/* fails with error 5 - divergent, or slowly convergent */
+quad_qagi(cos(x)/x,x,1,inf);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-defint(%e^(-x^2)*sin(x^3),x,1,2);
+quad_qag(sin(x^3)*%e^(-x^2),x,1,2,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+quad_qagi(x^3/(%e^x-1),x,0,inf);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+quad_qagi(x^%pi*%e^(-x),x,0,inf);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
