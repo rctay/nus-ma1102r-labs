@@ -8,5 +8,10 @@ do_solve(eqn, x0, y0, dy0, x1):=(
     float(ev(sol, x=x1)));
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: input   start ] */
+eqn_1a: x^2*('diff(y,x,2)) + x*('diff(y,x)) + y*(x^2 - 9);
+do_solve(eqn_1a, 1, 1, 2, 2);
+/* [wxMaxima: input   end   ] */
+
 /* Maxima can't load/batch files which end with a comment! */
 "Created with wxMaxima"$
