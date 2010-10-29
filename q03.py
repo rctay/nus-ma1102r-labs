@@ -26,3 +26,8 @@ def G(num, prime_func):
 if __name__ == '__main__':
 	inst = PrimeChecker()
 	inst.load("primes.txt")
+
+	while True:
+		num = input("Enter a number to decompose into two primes: ")
+		ret = G(num, inst.is_prime)
+		print "G(%d) = %d" % (num, ret)
