@@ -1,0 +1,12 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.6 ] */
+
+/* [wxMaxima: input   start ] */
+do_solve(eqn, x0, y0, dy0, x1):=(
+    eqn_y: ode2(eqn, y, x),
+    sol: ic2(eqn_y, x=x0, y=y0, 'diff(y,x)=dy0),
+    ev(sol, x=x1));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
