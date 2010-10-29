@@ -12,7 +12,7 @@ class PrimeChecker(object):
 				line = line.strip()
 				if re.match('^\d', line):
 					for num in re.split('\s+', line):
-						self.prime_dict[num] = 1
+						self.prime_dict[int(num)] = 1
 
 if __name__ == '__main__':
 	inst = PrimeChecker()
