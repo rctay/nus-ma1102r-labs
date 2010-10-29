@@ -2,7 +2,7 @@ import re
 
 class PrimeChecker(object):
 	def is_prime(self, num):
-		return num in prime_dict
+		return num in self.prime_dict
 
 	def load(self, file):
 		self.prime_dict = {}
